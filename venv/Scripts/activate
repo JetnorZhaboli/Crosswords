@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\Perdorues\Desktop\crosswords\venv"
+VIRTUAL_ENV="C:\Users\Perdorues\Desktop\PYTHON KURS\PYTHON KURS 2\DAY-33 Crosswords\crosswords\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

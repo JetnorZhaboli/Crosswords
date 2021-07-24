@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\Perdorues\Desktop\crosswords\venv
+set VIRTUAL_ENV=C:\Users\Perdorues\Desktop\PYTHON KURS\PYTHON KURS 2\DAY-33 Crosswords\crosswords\venv
 
 if not defined PROMPT set PROMPT=$P$G
 

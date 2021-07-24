@@ -1,4 +1,4 @@
-#!c:\users\perdorues\desktop\crosswords\venv\scripts\python.exe
+#!c:\users\perdorues\desktop\python kurs\python kurs 2\day-33 crosswords\crosswords\venv\scripts\python.exe
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 
