@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ crossword.publisher.name }} crossword published on {{ crossword.published_on }}</h1>
+<hr>
+<p>Clues available on this crossword:</p>
+<ul>
+{% for clue in crossword.clues.all %}
+    <li>{{ clue.clue }}</li>
+{% endfor %}
+</ul>
+{% endblock content %}

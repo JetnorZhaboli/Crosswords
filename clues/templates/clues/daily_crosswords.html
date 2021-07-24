@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Daily Crosswords</h1>
+<hr>
+<p>Crosswords published today on {{ today }}</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th>Crossword</th>
+            <th>URL</th>
+            <th>Clues</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for crossword in crosswords %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>
+                <a href="{% url 'crossword_detail' pk=crossword.pk %}">{{ crossword }}</a>
+            </td>
+            <td>
+                <a href="{{ crossword.url }}" target="_blank" rel="noopener,nofollow">{{ crossword.url }}</a>
+            </td>
+            <td>{{ crossword.clues.all|length }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}
