@@ -8,7 +8,8 @@
     <thead>
         <tr>
             <th scope="col">#</th>
-            <th>Crossword</th>
+            <th>Publisher</th>
+            <th>Published On</th>
             <th>URL</th>
             <th>Clues</th>
         </tr>
@@ -18,7 +19,15 @@
         <tr>
             <td>{{ forloop.counter }}</td>
             <td>
-                <a href="{% url 'crossword_detail' pk=crossword.pk %}">{{ crossword }}</a>
+                <a href="{% url 'publisher_detail' slug=crossword.publisher.slug %}">
+                    {{ crossword.publisher.name }}
+                </a>
+            </td>
+            <td>
+                <i class="bi bi-calendar-event"></i>
+                <a href="{% url 'crossword_detail' pk=crossword.pk %}">
+                    {{ crossword.published_on }}
+                </a>
             </td>
             <td>
                 <a href="{{ crossword.url }}" target="_blank" rel="noopener,nofollow">{{ crossword.url }}</a>

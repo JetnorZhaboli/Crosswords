@@ -1,8 +1,9 @@
 import datetime
 
 from django.shortcuts import render
+from django.views.generic import ListView, DetailView
 
-from clues.models import Crossword
+from clues.models import Publisher, Crossword, Clue
 
 
 def get_daily_crosswords(request):
@@ -34,3 +35,15 @@ def get_crossword_details(request, pk):
     return render(request, "clues/crossword_detail.html", context={
         "crossword": crossword
     })
+
+
+class PublisherListView(ListView):
+    queryset = Publisher.objects.all()
+
+
+class PublisherDetailView(DetailView):
+    queryset = Publisher.objects.prefetch_related("crosswords").all()
+
+
+class ClueDetailView(DetailView):
+    queryset = Clue.objects.all()

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ publisher.name }}</h1>
+<hr>
+<p>
+    <a href="{{ publisher.url }}" target="_blank" rel="nofollow,noopener">
+        {{ publisher.url }}
+        <i class="bi bi-arrow-up-right-square"></i>
+    </a>
+</p>
+<ul>
+{% for crossword in publisher.crosswords.all %}
+    <li>
+        <a href="{% url 'crossword_detail' pk=crossword.pk %}">{{ crossword.published_on }}</a>
+    </li>
+{% endfor %}
+</ul>
+{% endblock content %}

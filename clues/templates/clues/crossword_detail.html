@@ -6,7 +6,9 @@
 <p>Clues available on this crossword:</p>
 <ul>
 {% for clue in crossword.clues.all %}
-    <li>{{ clue.clue }}</li>
+    <li>
+        <a href="{% url 'clue_detail' slug=clue.slug %}">{{ clue.clue }}</a>
+    </li>
 {% endfor %}
 </ul>
 {% endblock content %}
